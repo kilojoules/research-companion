@@ -1,6 +1,6 @@
 # Research Companion
 
-**Strategic research thinking agents for [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — idea evaluation, project triage, and structured brainstorming to help you do research that matters.
+**Strategic research thinking agents for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [Codex](https://openai.com/codex/)** — idea evaluation, project triage, and structured brainstorming to help you do research that matters.
 
 Most AI writing tools help you *write* papers. This plugin helps you decide *which* papers to write.
 
@@ -32,18 +32,40 @@ This plugin provides that colleague.
 
 | Skill | What it does |
 |-------|-------------|
-| `/research-companion` | A structured multi-phase ideation session that orchestrates all three agents through: **Seed** → **Diverge** → **Evaluate** → **Deepen** → **Frame** → **Decide**. Includes Carlini's "conclusion-first test." |
+| `research-companion` | A structured multi-phase ideation session that orchestrates all three agents through: **Seed** → **Diverge** → **Evaluate** → **Deepen** → **Frame** → **Decide**. Includes Carlini's "conclusion-first test." |
 
 ### Principles
 
 8 research strategy principles organized into three categories (Problem Selection, Execution Strategy, Strategic Positioning) that guide the agents' evaluations.
 
+### Codex Support
+
+This repository now also includes a native Codex plugin manifest and interface metadata:
+
+- `.codex-plugin/plugin.json`
+- `agents/openai.yaml`
+- `.agents/plugins/marketplace.json`
+
+The same core prompts, agents, and principles are shared across Claude Code and Codex, with the orchestration instructions written to degrade gracefully if delegated subagents are unavailable.
+
+Codex supports plugin marketplaces and installation through the Plugin Directory. This repo now includes a repo-scoped marketplace file so the plugin can be installed after cloning, without manually creating marketplace JSON. Detailed Codex setup lives in [docs/codex-installation.md](./docs/codex-installation.md).
+
 ## Installation
+
+### Claude Code
 
 ```bash
 claude plugin marketplace add https://github.com/andrehuang/research-companion
 claude plugin install research-companion@andrehuang-research-companion
 ```
+
+### Codex
+
+See [docs/codex-installation.md](/Users/haoyu/code/research-companion/docs/codex-installation.md) for the full Codex installation guide, including:
+
+- repo marketplace installation
+- personal local marketplace installation
+- official Codex plugin docs links
 
 ## Usage
 
@@ -71,9 +93,11 @@ The **Research Strategist** will assess your competitive position, impact potent
 ### Run a full brainstorming session
 
 ```
-/research-brainstorm I'm interested in the intersection of program synthesis
+$research-companion I'm interested in the intersection of program synthesis
 and scientific discovery
 ```
+
+In Codex, you can explicitly invoke the skill with `$research-companion`. In Claude Code, you can call the equivalent command flow directly.
 
 This launches a 6-phase guided session:
 

@@ -11,7 +11,7 @@ Your specialty is generating ideas that researchers working within a single fiel
 
 ## Before Starting
 
-Read the research strategy principles at `principles/research-strategy.md` (relative to plugin directory) or `~/.claude/principles/research-strategy.md`. Pay special attention to RS7 (Comparative Advantage — cross-field bridging) and RS3 (The Nugget Test).
+Read the research strategy principles at `principles/research-strategy.md` from the repository or installed plugin copy before you begin. Pay special attention to RS7 (Comparative Advantage — cross-field bridging) and RS3 (The Nugget Test).
 
 ## Your Task
 
