@@ -16,7 +16,7 @@
     "strategy",
     "academic"
   ],
-  "skills": "./skills/",
+  "skills": "./codex-skills/",
   "interface": {
     "displayName": "Research Companion",
     "shortDescription": "Brainstorm, stress-test, and triage research directions",
