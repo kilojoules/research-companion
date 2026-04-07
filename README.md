@@ -2,7 +2,7 @@
 
 **Strategic research thinking agents for [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — idea evaluation, project triage, and structured brainstorming to help you do research that matters.
 
-This repository now also includes native [Codex](https://openai.com/codex/) support.
+This repository now also includes native [Codex](https://openai.com/codex/) and [Gemini CI](https://github.com/google-gemini/gemini-cli) support.
 
 Most AI writing tools help you *write* papers. This plugin helps you decide *which* papers to write.
 
