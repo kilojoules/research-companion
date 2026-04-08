@@ -174,6 +174,7 @@ For PURSUE ideas, the "first step" must be:
 - **Specific** — not "think more" but "implement X and test on Y"
 - **Risk-targeted** — tests the assumption most likely to kill the project (RS4: Fail Fast)
 - **Time-bounded** — achievable in 1-2 weeks
+Do not immediatly implement this first step. We should be opening a dialogue with the user by presenting these concrete POSSIBLE first steps
 
 For PARK ideas, note what would need to change for them to become PURSUE (timing shift, new tool/dataset, collaborator).
 
