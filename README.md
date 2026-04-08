@@ -1,6 +1,6 @@
 # Research Companion
 
-**Strategic research thinking agents for [Claude Code](https://docs.anthropic.com/en/docs/claude-code)** — idea evaluation, project triage, and structured brainstorming to help you do research that matters.
+**Strategic research thinking agents for Gemini CLI** — idea evaluation, project triage, and structured brainstorming to help you do research that matters.
 
 This repository now also includes native [Codex](https://openai.com/codex/) and [Gemini CI](https://github.com/google-gemini/gemini-cli) support.
 
@@ -169,15 +169,14 @@ These principles, derived from patterns in high-impact research, guide all agent
 
 ## Persistent Evaluations (NEW in v1.1)
 
-Evaluation results are now **saved to disk** so they persist across sessions:
+Evaluation results are now **saved to disk** so they persist across sessions using Gemini's native scaffolding:
 
-- After each session, verdicts are written to `research-evaluations/YYYY-MM-DD-<topic>.md`
-- On subsequent sessions, the system **checks for prior evaluations** of similar topics before starting fresh
+- After each session, verdicts are written to `.gemini/evaluations/YYYY-MM-DD-<topic>.md`
+- On subsequent sessions, the system **checks for prior evaluations** in `.gemini/evaluations/` before starting fresh
 - PARK'd ideas include "revisit conditions" — what would need to change to reconsider
 - The Research Strategist now outputs a **watch list** (search terms, key researchers, venues to monitor) for competitive tracking
 - The Idea Critic checks for prior evaluations to avoid re-evaluating killed ideas unless conditions have changed
-
-This means your research thinking accumulates over time rather than starting from scratch each session.
+- You can use `/restore` to return to the full context of a previous evaluation session.
 
 ## Pairs Well With
 

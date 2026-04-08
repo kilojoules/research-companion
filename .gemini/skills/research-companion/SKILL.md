@@ -34,9 +34,9 @@ You have access to specialized subagents that you can invoke as tools:
 **Goal:** Understand what the researcher cares about, what's bugging them, and what constraints they have. Also check for prior work on this topic.
 
 **Prior evaluation check:** Before interviewing, search for prior evaluations:
-1. Look for `research-evaluations/*.md` files in the current project directory.
+1. Look for evaluation files in the `.gemini/evaluations/` directory within the current project.
 2. If a prior evaluation exists for a similar topic, present a brief summary: "You explored [topic] on [date]. Verdict was [X]. Key concern was [Y]."
-3. Ask: "Want to revisit this with fresh eyes, or start from the prior evaluation?"
+3. Ask the user if they want to `/restore` a previous session checkpoint for full context, or start fresh from this evaluation summary.
 4. If the prior verdict was PARK, check whether the "revisit conditions" have been met.
 
 **Interview (if no prior evaluation or user wants fresh start):**
@@ -132,6 +132,17 @@ Synthesize everything into a final recommendation:
 After presenting the final verdict, persist the evaluation:
 1. Create directory `research-evaluations/` if it doesn't exist.
 2. Write evaluation file `research-evaluations/YYYY-MM-DD-<topic-slug>.md` with the scores, verdict, and reasoning.
+
+---
+
+## Orchestration Rules
+
+- **Maximize parallelism.** Invoke subagents in parallel for multiple ideas.
+- **Show your plan.** Before each phase, briefly state what you're about to do.
+- **Let the researcher drive.** The researcher picks which ideas to evaluate.
+- **Don't skip Phase 5.** The conclusion-first test is critical.
+- **Keep momentum.** Aim to complete the session efficiently.
+ow, and `/resume` it later."
 
 ---
 
