@@ -139,7 +139,7 @@ When the user asks whether to continue a project, use the strategy framework fro
 - Use Codex-native tools and delegation only when actually helpful.
 - Do not mention Claude-specific paths, commands, or storage locations.
 - If delegation helps, you may use Codex subagents, but the workflow should still work if done by one agent.
-- If you persist any evaluation, prefer a project-local `.gemini/evaluations/` directory.
+- If you persist any evaluation, prefer a project-local `research-evaluations/` directory.
 
 ## Tone
 

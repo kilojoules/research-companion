@@ -39,9 +39,9 @@ If the user also has the **Academic Writing Agents** plugin installed, you may a
 **Goal:** Understand what the researcher cares about, what's bugging them, and what constraints they have. Also check for prior work on this topic.
 
 **Prior evaluation check:** Before interviewing, search for prior evaluations:
-1. Look for evaluation files in the `.gemini/evaluations/` directory within the current project.
+1. Look for `research-evaluations/*.md` files in the current project directory and in `~/.claude/projects/*/memory/`.
 2. If a prior evaluation exists for a similar topic, present a brief summary: "You explored [topic] on [date]. Verdict was [X]. Key concern was [Y]."
-3. Ask the user if they want to `/restore` a previous session checkpoint for full context, or start fresh from this evaluation summary.
+3. Ask: "Want to revisit this with fresh eyes, or start from the prior evaluation?"
 4. If the prior verdict was PARK, check whether the "revisit conditions" have been met.
 
 **Interview (if no prior evaluation or user wants fresh start):**
@@ -177,11 +177,11 @@ For KILL ideas, briefly note what was learned and whether any sub-ideas are wort
 
 ### Save Evaluation Results
 
-After presenting the final verdict, persist the evaluation using Gemini's local scaffolding:
+After presenting the final verdict, persist the evaluation:
 
-1. **Determine save location:** Use the hidden `.gemini/evaluations/` directory in the current project root.
-2. **Create directory:** `.gemini/evaluations/` if it doesn't exist.
-3. **Write evaluation file:** `.gemini/evaluations/YYYY-MM-DD-<topic-slug>.md` containing:
+1. **Determine save location:** Use the current project's memory directory, or if not in a project, use `~/.claude/projects/-Users-<user>/memory/`.
+2. **Create directory:** `research-evaluations/` if it doesn't exist.
+3. **Write evaluation file:** `research-evaluations/YYYY-MM-DD-<topic-slug>.md` containing:
    ```markdown
    ---
    date: YYYY-MM-DD
@@ -206,8 +206,8 @@ After presenting the final verdict, persist the evaluation using Gemini's local 
    ## Revisit Conditions
    <what would need to change for a PARK to become PURSUE, or a KILL to be reconsidered>
    ```
-4. **Update Index:** Add a one-line entry linking to the evaluation file in `.gemini/evaluations/INDEX.md`.
-5. **Session Checkpoint Reminder:** Confirm to the user: "Evaluation saved to `.gemini/evaluations/`. If you want to lock in this exact conversation state, you can use the `/chat` or checkpoint command now, and `/resume` it later."
+4. **Update MEMORY.md index:** Add a one-line entry linking to the evaluation file.
+5. Confirm to the user: "Evaluation saved. I'll check for this next time you explore a similar topic."
 
 ---
 
