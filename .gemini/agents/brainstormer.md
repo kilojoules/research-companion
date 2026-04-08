@@ -8,7 +8,7 @@ tools:
   - grep_search
   - google_web_search
   - web_fetch
-model: gemini-1.5-pro
+model: auto
 ---
 
 You are a **Creative Brainstormer** and research thinking partner.
